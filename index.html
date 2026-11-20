@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chengkun Rao (饶承坤) | AI Agent Infrastructure &amp; Reproducible ML</title>
+  <meta name="description" content="Chengkun Rao (饶承坤, @lllllllama) builds AI agent infrastructure for reproducible ML. Explore RigorPilot-Skills, DeepTrender, xget contributions, and DDSkel research.">
+  <link rel="canonical" href="https://lllllllama.github.io/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Chengkun Rao (饶承坤) | AI Agent Infrastructure &amp; Reproducible ML">
+  <meta property="og:description" content="Creator of RigorPilot-Skills and DeepTrender. Upstream xget contributor. First author of the DDSkel preprint.">
+  <meta property="og:url" content="https://lllllllama.github.io/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "url": "https://lllllllama.github.io/",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://lllllllama.github.io/#chengkun-rao",
+      "name": "Chengkun Rao",
+      "alternateName": ["饶承坤", "lllllllama"],
+      "url": "https://lllllllama.github.io/",
+      "sameAs": ["https://github.com/lllllllama"],
+      "knowsAbout": ["AI agent infrastructure", "Reproducible machine learning", "Computer vision", "Audio-visual representation learning"]
+    }
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: light-dark(#f7f8fb, #10141c);
+      --surface: light-dark(#ffffff, #181f2b);
+      --ink: light-dark(#17243b, #ebf1fc);
+      --muted: light-dark(#495970, #b6c6dc);
+      --rule: light-dark(#d5deec, #35445b);
+      --accent: light-dark(#224fc0, #a7bcff);
+      font-family: "Segoe UI", system-ui, sans-serif;
+      line-height: 1.6;
+      background: var(--bg);
+      color: var(--ink);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 62rem; margin: 0 auto; padding: 0 clamp(1.1rem, 5vw, 3rem) 4rem; }
+    header { padding: clamp(2.6rem, 7vw, 5rem) 0 2rem; border-bottom: 1px solid var(--rule); }
+    a { color: var(--accent); text-underline-offset: .19em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    h1, h2, h3 { line-height: 1.2; }
+    h1 { margin: .5rem 0 .9rem; font-size: clamp(2.25rem, 6.4vw, 4.5rem); letter-spacing: -.045em; }
+    h1 span { display: inline-block; vertical-align: .15em; color: var(--muted); font-size: .46em; letter-spacing: 0; }
+    h2 { margin: 0 0 1rem; font-size: clamp(1.45rem, 4vw, 1.9rem); letter-spacing: -.02em; }
+    h3 { margin: 0 0 .55rem; font-size: 1.21rem; }
+    p { margin: 0; }
+    p + p { margin-top: .75rem; }
+    section { padding-top: 2.25rem; scroll-margin-top: 1rem; }
+    .handle { color: var(--accent); font-family: ui-monospace, "Cascadia Mono", monospace; font-size: .9rem; }
+    .lead { font-weight: 650; font-size: clamp(1.03rem, 3vw, 1.24rem); }
+    .intro { max-width: 66ch; color: var(--muted); }
+    .links { display: flex; flex-wrap: wrap; column-gap: 1.15rem; row-gap: .4rem; padding: 0; list-style: none; }
+    nav .links { margin: 1.2rem 0 0; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+    article { padding: 1.15rem; border: 1px solid var(--rule); border-radius: .75rem; background: var(--surface); }
+    article p { color: var(--muted); }
+    article .links { margin: .8rem 0 0; font-size: .94rem; }
+    .publication h3 { max-width: 65ch; }
+    .publication p { max-width: 72ch; }
+    .contact { margin: 0; padding-left: 1.15rem; }
+    .contact li { margin-bottom: .4rem; }
+    @media (max-width: 42rem) { .cards { grid-template-columns: minmax(0, 1fr); } }
+  </style>
+</head>
+<body>
+  <main>
+    <header id="chengkun-rao">
+      <a class="handle" href="https://github.com/lllllllama">@lllllllama on GitHub</a>
+      <h1>Chengkun Rao <span lang="zh-CN">饶承坤</span></h1>
+      <p class="lead">AI agent infrastructure · Reproducible ML research · Computer vision</p>
+      <p class="intro">I’m an AI undergraduate at Wuhan Textile University. I build agent harnesses that help coding agents run deep-learning experiments and produce commands, logs, and results researchers can inspect. My research interests include depth-aware vision and audio-visual representation learning.</p>
+      <nav aria-label="On this page">
+        <ul class="links">
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#zh" lang="zh-CN">中文简介</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="projects">
+      <h2>Selected projects</h2>
+      <div class="cards">
+        <article>
+          <h3>RigorPilot-Skills</h3>
+          <p>Creator and maintainer of an Agent Skills toolkit for README-first deep-learning reproduction. It separates baseline reproduction from authorized exploration and connects each check to its evidence.</p>
+          <ul class="links">
+            <li><a href="https://github.com/lllllllama/RigorPilot-Skills">RigorPilot source</a></li>
+            <li><a href="https://github.com/lllllllama/RigorPilot-Skills#examples">Reproduction examples</a></li>
+          </ul>
+        </article>
+        <article>
+          <h3>xget</h3>
+          <p>Upstream contributor to developer-resource acceleration infrastructure for GitHub, Hugging Face, package registries, and container images. I contributed configuration validation and protocol error handling.</p>
+          <ul class="links">
+            <li><a href="https://github.com/xixu-me/xget">Upstream repository</a></li>
+            <li><a href="https://github.com/xixu-me/xget/pull/291">Merged contribution</a></li>
+          </ul>
+        </article>
+        <article>
+          <h3>DeepTrender</h3>
+          <p>I built an AI paper trends dashboard and a Model Context Protocol (MCP) service using data from arXiv, OpenReview, OpenAlex, and Semantic Scholar.</p>
+          <ul class="links">
+            <li><a href="https://github.com/lllllllama/DeepTrender">DeepTrender source</a></li>
+            <li><a href="https://lllllllama.github.io/DeepTrender/">Live dashboard</a></li>
+          </ul>
+        </article>
+        <article>
+          <h3>SSHFerry</h3>
+          <p>A desktop workspace for SSH/SFTP transfers, with multiple sessions, parallel transfers, and recovery for interrupted jobs.</p>
+          <ul class="links">
+            <li><a href="https://github.com/lllllllama/SSHFerry">SSHFerry source</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section id="research">
+      <h2>Research</h2>
+      <article class="publication">
+        <h3><a href="https://arxiv.org/abs/2608.16367v2">Depth-Dominant Skeleton Detection for Natural Scenes</a></h3>
+        <p><strong>First author · 2026 arXiv preprint</strong></p>
+        <p>DDSkel uses depth as the primary input and RGB as an auxiliary signal to detect object skeletons in natural images. The paper reports F-measure comparisons on SK506, SK-LARGE, WH-SYMMAX, and SymPASCAL.</p>
+      </article>
+    </section>
+    <section id="zh" lang="zh-CN">
+      <h2>中文简介</h2>
+      <p>我是饶承坤，武汉纺织大学人工智能本科生，关注 AI Agent 基础设施、深度学习实验复现和计算机视觉。我发起了科研复现工具 RigorPilot-Skills 和论文趋势工具 DeepTrender，参与 xget 上游开发，也是 DDSkel 深度主导骨架检测预印本的第一作者。</p>
+    </section>
+    <section id="contact">
+      <h2>Contact <span lang="zh-CN">· 联系方式</span></h2>
+      <ul class="contact">
+        <li>Email · <a href="mailto:lama@ckrao.dev">lama@ckrao.dev</a></li>
+        <li>WeChat <span lang="zh-CN">/ 微信</span> · <a href="mailto:lama@ckrao.dev?subject=WeChat%20contact">Request via email</a></li>
+        <li>Technical writing · <a href="https://blog.csdn.net/2301_79168784">CSDN</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
