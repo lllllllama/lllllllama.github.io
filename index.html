@@ -1,14 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chengkun Rao (饶承坤) | AI Agent Infrastructure &amp; Reproducible ML</title>
-  <meta name="description" content="Chengkun Rao (饶承坤, @lllllllama) builds AI agent infrastructure for reproducible ML. Explore RigorPilot-Skills, DeepTrender, xget contributions, and DDSkel research.">
+  <title>饶承坤（Chengkun Rao）｜具身智能、计算机视觉与 AI Agent 工程</title>
+  <meta name="description" content="饶承坤（Chengkun Rao，@lllllllama），2027 届本科应届毕业生，正在研究面向机器人操作的 Physical WAM。正在寻找具身智能、计算机视觉或 AI Agent 工程相关的工作机会。">
   <link rel="canonical" href="https://lllllllama.github.io/">
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Chengkun Rao (饶承坤) | AI Agent Infrastructure &amp; Reproducible ML">
-  <meta property="og:description" content="Creator of RigorPilot-Skills and DeepTrender. Upstream xget contributor. First author of the DDSkel preprint.">
+  <meta property="og:title" content="饶承坤（Chengkun Rao）｜具身智能、计算机视觉与 AI Agent 工程">
+  <meta property="og:description" content="机器人操作的世界-动作模型 Physical WAM。具身智能、计算机视觉与 AI Agent 工程。">
+  <meta property="og:locale" content="zh_CN">
   <meta property="og:url" content="https://lllllllama.github.io/">
   <script type="application/ld+json">
   {
@@ -21,8 +22,8 @@
       "name": "Chengkun Rao",
       "alternateName": ["饶承坤", "lllllllama"],
       "url": "https://lllllllama.github.io/",
-      "sameAs": ["https://github.com/lllllllama"],
-      "knowsAbout": ["AI agent infrastructure", "Reproducible machine learning", "Computer vision", "Audio-visual representation learning"]
+      "sameAs": ["https://github.com/lllllllama", "https://blog.csdn.net/2301_79168784"],
+      "knowsAbout": ["Embodied AI", "World-action models", "Computer vision", "AI agent engineering", "Reproducible machine learning"]
     }
   }
   </script>
@@ -35,7 +36,7 @@
       --muted: light-dark(#495970, #b6c6dc);
       --rule: light-dark(#d5deec, #35445b);
       --accent: light-dark(#224fc0, #a7bcff);
-      font-family: "Segoe UI", system-ui, sans-serif;
+      font-family: "Segoe UI", "Microsoft YaHei UI", system-ui, sans-serif;
       line-height: 1.6;
       background: var(--bg);
       color: var(--ink);
@@ -48,101 +49,242 @@
     a:hover { text-decoration-thickness: 2px; }
     a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
     h1, h2, h3 { line-height: 1.2; }
-    h1 { margin: .5rem 0 .9rem; font-size: clamp(2.25rem, 6.4vw, 4.5rem); letter-spacing: -.045em; }
+    h1 { margin: .5rem 0 .9rem; font-size: clamp(2.25rem, 6.4vw, 4.5rem); letter-spacing: -.02em; }
     h1 span { display: inline-block; vertical-align: .15em; color: var(--muted); font-size: .46em; letter-spacing: 0; }
     h2 { margin: 0 0 1rem; font-size: clamp(1.45rem, 4vw, 1.9rem); letter-spacing: -.02em; }
     h3 { margin: 0 0 .55rem; font-size: 1.21rem; }
     p { margin: 0; }
     p + p { margin-top: .75rem; }
     section { padding-top: 2.25rem; scroll-margin-top: 1rem; }
-    .handle { color: var(--accent); font-family: ui-monospace, "Cascadia Mono", monospace; font-size: .9rem; }
+    .handle { display: inline-block; color: var(--accent); font-family: ui-monospace, "Cascadia Mono", monospace; font-size: .9rem; }
     .lead { font-weight: 650; font-size: clamp(1.03rem, 3vw, 1.24rem); }
     .intro { max-width: 66ch; color: var(--muted); }
     .links { display: flex; flex-wrap: wrap; column-gap: 1.15rem; row-gap: .4rem; padding: 0; list-style: none; }
     nav .links { margin: 1.2rem 0 0; }
     .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
-    article { padding: 1.15rem; border: 1px solid var(--rule); border-radius: .75rem; background: var(--surface); }
+    article { padding: 1.15rem; border: 1px solid var(--rule); border-radius: .75rem; background: var(--surface); scroll-margin-top: 1rem; }
     article p { color: var(--muted); }
     article .links { margin: .8rem 0 0; font-size: .94rem; }
-    .publication h3 { max-width: 65ch; }
-    .publication p { max-width: 72ch; }
-    .contact { margin: 0; padding-left: 1.15rem; }
-    .contact li { margin-bottom: .4rem; }
-    @media (max-width: 42rem) { .cards { grid-template-columns: minmax(0, 1fr); } }
+    article:focus-within, article:target { border-color: var(--accent); }
+    section:target > h2 { color: var(--accent); }
+    #current article { border-inline-start: 3px solid var(--accent); }
+    .experience { margin: 0; padding: 0; list-style: none; }
+    .experience li {
+      display: grid;
+      grid-template-columns: 9rem minmax(0, 1fr);
+      gap: 1.15rem;
+      padding: 1.15rem 0;
+      border-top: 1px solid var(--rule);
+    }
+    .experience-dates { color: var(--muted); font-size: .94rem; }
+    .experience h3 { margin-bottom: .35rem; }
+    .experience p + p { margin-top: .35rem; color: var(--muted); }
+    @media (max-width: 42rem) {
+      .cards, .experience li { grid-template-columns: minmax(0, 1fr); }
+      .experience li { gap: .35rem; }
+    }
+
+    @keyframes header-enter {
+      from { opacity: .65; translate: 0 .65rem; }
+      to { opacity: 1; translate: none; }
+    }
+    @keyframes grow-line {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+      header { position: relative; }
+      header > * { animation: header-enter .55s ease-out backwards; }
+      header > :nth-child(2) { animation-delay: .05s; }
+      header > :nth-child(3) { animation-delay: .10s; }
+      header > :nth-child(4) { animation-delay: .15s; }
+      header > :nth-child(5) { animation-delay: .20s; }
+      header > :nth-child(n+6) { animation-delay: .25s; }
+      header::after {
+        content: "";
+        position: absolute;
+        inset: auto auto -1px 0;
+        width: min(6rem, 25%);
+        height: 2px;
+        background: var(--accent);
+        transform-origin: left;
+        animation: grow-line .7s .15s ease-out backwards;
+      }
+      nav a { transition: text-underline-offset .18s ease-out; }
+      nav a:is(:hover, :focus-visible) { text-underline-offset: .36em; }
+
+      @supports (animation-timeline: scroll(root block)) {
+        body::before {
+          content: "";
+          position: fixed;
+          inset: 0 0 auto;
+          z-index: 1;
+          height: 3px;
+          background: var(--accent);
+          pointer-events: none;
+          transform-origin: left;
+          animation: grow-line linear both;
+          animation-timeline: scroll(root block);
+        }
+      }
+    }
+    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+      article { transition: transform .2s ease-out, border-color .2s ease-out, box-shadow .2s ease-out; }
+      article:hover {
+        transform: translateY(-4px);
+        border-color: color-mix(in srgb, var(--accent) 55%, var(--rule));
+        box-shadow: 0 .5rem 1.5rem rgb(0 0 0 / .12);
+      }
+    }
   </style>
 </head>
 <body>
   <main>
     <header id="chengkun-rao">
-      <a class="handle" href="https://github.com/lllllllama">@lllllllama on GitHub</a>
-      <h1>Chengkun Rao <span lang="zh-CN">饶承坤</span></h1>
-      <p class="lead">AI agent infrastructure · Reproducible ML research · Computer vision</p>
-      <p class="intro">I’m an AI undergraduate at Wuhan Textile University. I build agent harnesses that help coding agents run deep-learning experiments and produce commands, logs, and results researchers can inspect. My research interests include depth-aware vision and audio-visual representation learning.</p>
-      <nav aria-label="On this page">
+      <a class="handle" href="https://github.com/lllllllama">GitHub · @lllllllama</a>
+      <h1>饶承坤 <span lang="en">Chengkun Rao</span></h1>
+      <p class="lead">具身智能 · 计算机视觉 · AI Agent 工程</p>
+      <p class="intro">我是 <strong>2027 届本科应届毕业生</strong>，目前大四，近期研究机器人操作的世界-动作模型。</p>
+      <p class="intro"><strong>正在寻找具身智能、计算机视觉或 AI Agent 工程相关的工作机会。</strong> 也欢迎技术交流与项目合作。<a href="mailto:lama@ckrao.dev">邮件联系我</a>。</p>
+      <p><a href="https://blog.csdn.net/2301_79168784"><strong>CSDN · 约 1.4 万粉丝</strong></a></p>
+      <nav aria-label="页面导航">
         <ul class="links">
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#zh" lang="zh-CN">中文简介</a></li>
+          <li><a href="#current">近期项目</a></li>
+          <li><a href="#projects">代表项目</a></li>
+          <li><a href="#experience">实习经历</a></li>
+          <li><a href="#research">科研</a></li>
+          <li><a href="#contact">联系方式</a></li>
         </ul>
       </nav>
     </header>
+    <section id="current">
+      <h2>近期项目</h2>
+      <article>
+        <h3>Physical WAM · 机器人操作的世界-动作模型</h3>
+        <p><strong>进行中。</strong> 基于 V-JEPA，从当前观测预测物体位姿、运动与相对关系，验证紧凑的未来物理表征能否用于生成机器人动作。</p>
+        <p>在一组小规模离线仿真实验中，未来查询数从 1,568 减到 196，<strong>预测器计算量（FLOPs）约降 86%，训练循环耗时减少一半以上</strong>。</p>
+      </article>
+    </section>
     <section id="projects">
-      <h2>Selected projects</h2>
+      <h2>代表项目</h2>
       <div class="cards">
         <article>
           <h3>RigorPilot-Skills</h3>
-          <p>Creator and maintainer of an Agent Skills toolkit for README-first deep-learning reproduction. It separates baseline reproduction from authorized exploration and connects each check to its evidence.</p>
+          <p><strong><a href="https://www.skills.sh/lllllllama/rigorpilot-skills">skills.sh 累计约 460 万次安装</a></strong> · <time datetime="2026-11-20">2026 年 11 月 20 日</time></p>
+          <p>我独立开发的深度学习复现工具。Agent 解析 README，Python 执行命令并记录日志和指标。Trusted / Explore 分开运行基线复现与探索，结果可通过标注版 README 和结构化记录回溯。</p>
           <ul class="links">
-            <li><a href="https://github.com/lllllllama/RigorPilot-Skills">RigorPilot source</a></li>
-            <li><a href="https://github.com/lllllllama/RigorPilot-Skills#examples">Reproduction examples</a></li>
+            <li><a href="https://github.com/lllllllama/RigorPilot-Skills">源码</a></li>
+            <li><a href="https://github.com/lllllllama/RigorPilot-Skills#examples">复现案例</a></li>
           </ul>
         </article>
-        <article>
-          <h3>xget</h3>
-          <p>Upstream contributor to developer-resource acceleration infrastructure for GitHub, Hugging Face, package registries, and container images. I contributed configuration validation and protocol error handling.</p>
+        <article id="pico-eldercare">
+          <h3>PICO ElderCare VR/MR</h3>
+          <p>我主导实机交互和动作追踪，统一腕部追踪器与手柄的位姿接口，支持追踪丢失时切换来源。也搭建了 Codex Skill 实机复测流程，用头显画面诊断问题并在设备上验证改动。</p>
           <ul class="links">
-            <li><a href="https://github.com/xixu-me/xget">Upstream repository</a></li>
-            <li><a href="https://github.com/xixu-me/xget/pull/291">Merged contribution</a></li>
+            <li><a href="https://github.com/lllllllama/eldercare-vr">项目源码</a></li>
           </ul>
         </article>
         <article>
           <h3>DeepTrender</h3>
-          <p>I built an AI paper trends dashboard and a Model Context Protocol (MCP) service using data from arXiv, OpenReview, OpenAlex, and Semantic Scholar.</p>
+          <p>我独立开发的论文趋势分析系统，接入 arXiv、OpenReview 等四个来源，通过 MCP、REST API 和在线仪表盘提供查询。2026 年 5 月公开快照收录 <strong>142,263 条结构化论文记录</strong>。</p>
           <ul class="links">
-            <li><a href="https://github.com/lllllllama/DeepTrender">DeepTrender source</a></li>
-            <li><a href="https://lllllllama.github.io/DeepTrender/">Live dashboard</a></li>
+            <li><a href="https://github.com/lllllllama/DeepTrender">源码</a></li>
+            <li><a href="https://lllllllama.github.io/DeepTrender/">在线仪表盘</a></li>
+          </ul>
+        </article>
+        <article>
+          <h3>xget</h3>
+          <p>我是 xget 的<strong>两位主要贡献者之一</strong>。项目统一路由 GitHub、Hugging Face、软件包和容器镜像请求，支持分段下载与按平台缓存。上游仓库有 <strong>8,000+ GitHub 星标</strong>，曾登上 <a href="https://trendshift.io/repositories/14768">GitHub Trending JavaScript 日榜第 3 名</a>。</p>
+          <ul class="links">
+            <li><a href="https://github.com/xixu-me/xget">上游仓库</a></li>
           </ul>
         </article>
         <article>
           <h3>SSHFerry</h3>
-          <p>A desktop workspace for SSH/SFTP transfers, with multiple sessions, parallel transfers, and recovery for interrupted jobs.</p>
+          <p>我独立开发的多会话 SSH/SFTP 文件传输工具。针对高延迟链路支持连接复用、流水线预读、分块并行和断点续传。</p>
           <ul class="links">
-            <li><a href="https://github.com/lllllllama/SSHFerry">SSHFerry source</a></li>
+            <li><a href="https://github.com/lllllllama/SSHFerry">源码</a></li>
+          </ul>
+        </article>
+        <article>
+          <h3>GrillRadar</h3>
+          <p>六个角色 Agent 根据简历与目标岗位或研究方向生成问题，经过去重和质量过滤后汇总为面试报告。</p>
+          <ul class="links">
+            <li><a href="https://github.com/lllllllama/GrillRadar">源码与报告示例</a></li>
           </ul>
         </article>
       </div>
     </section>
-    <section id="research">
-      <h2>Research</h2>
-      <article class="publication">
-        <h3><a href="https://arxiv.org/abs/2608.16367v2">Depth-Dominant Skeleton Detection for Natural Scenes</a></h3>
-        <p><strong>First author · 2026 arXiv preprint</strong></p>
-        <p>DDSkel uses depth as the primary input and RGB as an auxiliary signal to detect object skeletons in natural images. The paper reports F-measure comparisons on SK506, SK-LARGE, WH-SYMMAX, and SymPASCAL.</p>
-      </article>
-    </section>
-    <section id="zh" lang="zh-CN">
-      <h2>中文简介</h2>
-      <p>我是饶承坤，武汉纺织大学人工智能本科生，关注 AI Agent 基础设施、深度学习实验复现和计算机视觉。我发起了科研复现工具 RigorPilot-Skills 和论文趋势工具 DeepTrender，参与 xget 上游开发，也是 DDSkel 深度主导骨架检测预印本的第一作者。</p>
-    </section>
-    <section id="contact">
-      <h2>Contact <span lang="zh-CN">· 联系方式</span></h2>
-      <ul class="contact">
-        <li>Email · <a href="mailto:lama@ckrao.dev">lama@ckrao.dev</a></li>
-        <li>WeChat <span lang="zh-CN">/ 微信</span> · <a href="mailto:lama@ckrao.dev?subject=WeChat%20contact">Request via email</a></li>
-        <li>Technical writing · <a href="https://blog.csdn.net/2301_79168784">CSDN</a></li>
+    <section id="experience">
+      <h2>实习经历</h2>
+      <ul class="experience" role="list">
+        <li>
+          <div class="experience-dates"><time datetime="2026-09">2026.09</time> 起</div>
+          <div>
+            <h3>同元软控</h3>
+            <p><strong>具身智能应用研究实习生</strong></p>
+            <p>开发并测试具身智能仿真平台的 Agent 接口，参与开源模型迁移、复现和调优。</p>
+          </div>
+        </li>
+        <li>
+          <div class="experience-dates"><time datetime="2026-05">2026.05</time>–<time datetime="2026-09">2026.09</time></div>
+          <div>
+            <h3>上海悦心健康集团</h3>
+            <p><strong>AI 技术实习生</strong></p>
+            <p>负责 PICO 原型的设备接入、动作追踪和实机测试。<a href="#pico-eldercare">项目详情</a></p>
+          </div>
+        </li>
+        <li>
+          <div class="experience-dates"><time datetime="2025-07">2025.07</time>–<time datetime="2025-10">2025.10</time></div>
+          <div>
+            <h3>上海交通大学</h3>
+            <p><strong>科研助理（实习）</strong> · 主动健康战略与发展研究院</p>
+            <p>参与可穿戴设备与智能健康管理研究，协助组织实验和编写阶段性研究材料。</p>
+          </div>
+        </li>
       </ul>
     </section>
+    <section id="research">
+      <h2>科研</h2>
+      <article>
+        <h3>DDSkel · 自然图像物体骨架检测</h3>
+        <p><strong>第一作者 · arXiv 预印本。</strong> 方法以深度为主、轻量 RGB 分支为辅。v2 在四个基准上取得对比方法中的最高 ODS F-measure，SymPASCAL 为 <strong>0.644</strong>，高出次优方法 <strong>0.062</strong>。</p>
+        <ul class="links">
+          <li><a href="https://arxiv.org/abs/2608.16367v2" title="Depth-Dominant Skeleton Detection for Natural Scenes">arXiv 预印本</a></li>
+          <li><a href="https://arxiv.org/html/2608.16367v2#S4.SS3.SSS1">实验结果</a></li>
+        </ul>
+      </article>
+    </section>
+    <section id="contact">
+      <h2>联系方式</h2>
+      <p>邮箱 · <a href="mailto:lama@ckrao.dev">lama@ckrao.dev</a></p>
+    </section>
   </main>
+  <script>
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: no-preference)');
+
+    if (motionPreference.matches && 'IntersectionObserver' in window && 'animate' in Element.prototype) {
+      const revealOnScroll = new IntersectionObserver((entries, observer) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+
+          observer.unobserve(entry.target);
+          if (!motionPreference.matches) continue;
+
+          entry.target.animate(
+            [
+              { opacity: .6, translate: '0 .85rem' },
+              { opacity: 1, translate: 'none' },
+            ],
+            { duration: 460, easing: 'ease-out' },
+          );
+        }
+      }, { threshold: .12 });
+
+      document.querySelectorAll('section article, .experience > li')
+        .forEach(item => revealOnScroll.observe(item));
+    }
+  </script>
 </body>
 </html>
