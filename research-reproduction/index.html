@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RigorPilot-Skills｜从 README 复现深度学习实验的工程案例｜饶承坤</title>
+  <meta name="description" content="饶承坤（Chengkun Rao）的 Codex Skills 科研复现案例。用 micrograd 展示 README 命令选择、环境失败定位、pytest 重跑和实验日志核验。">
+  <link rel="canonical" href="https://lllllllama.github.io/research-reproduction/">
+  <link rel="stylesheet" href="../role.css">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "RigorPilot-Skills｜从 README 复现深度学习实验的工程案例",
+  "description": "饶承坤（Chengkun Rao）的 Codex Skills 科研复现案例。用 micrograd 展示 README 命令选择、环境失败定位、pytest 重跑和实验日志核验。",
+  "mainEntityOfPage": "https://lllllllama.github.io/research-reproduction/",
+  "url": "https://lllllllama.github.io/research-reproduction/",
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-11-21",
+  "author": {
+    "@type": "Person",
+    "@id": "https://lllllllama.github.io/#chengkun-rao",
+    "name": "饶承坤",
+    "alternateName": [
+      "Chengkun Rao",
+      "lllllllama"
+    ],
+    "url": "https://lllllllama.github.io/",
+    "sameAs": [
+      "https://github.com/lllllllama",
+      "https://blog.csdn.net/2301_79168784"
+    ]
+  }
+}
+  </script>
+</head>
+<body>
+  <main>
+    <header>
+      <nav aria-label="作品导航">
+        <ul class="links">
+          <li><a href="../">个人主页</a></li>
+          <li><a href="../ai-full-stack/">AI 全栈与 Agent 作品</a></li>
+          <li><a href="https://github.com/lllllllama/RigorPilot-Skills">GitHub 源码</a></li>
+        </ul>
+      </nav>
+      <h1>RigorPilot-Skills｜从 README 复现深度学习实验的工程案例</h1>
+      <p><a href="../"><strong>饶承坤 Chengkun Rao</strong></a> · 2027 届本科应届生</p>
+      <p>我独立开发了 RigorPilot-Skills，用 Codex Skills 帮助 AI Agent 从研究仓库的 README 选择命令，记录运行日志与评测结果。这页用 micrograd 的自动微分单元测试展示一次复现流程。</p>
+    </header>
+    <article>
+      <h2>运行 README 里的测试</h2>
+      <p>在 2026 年 9 月 6 日的安装验收中，Agent 读取了 micrograd 原始 README，选择 <code>python -m pytest</code> 作为入口。首次独立试用通过了全部 2 项测试。</p>
+      <ul class="links">
+        <li><a href="https://github.com/lllllllama/RigorPilot-Skills/blob/main/docs/FIRST_USE_ACCEPTANCE.zh-CN.md">验收设置与完整证据</a></li>
+        <li><a href="https://github.com/lllllllama/RigorPilot-Skills/blob/main/benchmark_outputs/showcases/micrograd-first-use-before/repo/RIGORPILOT_README.md">带日志回链的 README</a></li>
+      </ul>
+    </article>
+    <article>
+      <h2>查明环境失败并重跑</h2>
+      <p>随后的一次重跑未将虚拟环境加入 <code>PATH</code>，子进程选中了没有 pytest 的 Python。失败保留在状态文件里。修正运行环境后，原来的两项测试全部通过，独立的 pytest 复核也得到了相同结果。</p>
+      <ul class="links">
+        <li><a href="https://github.com/lllllllama/RigorPilot-Skills/blob/main/benchmark_outputs/showcases/micrograd-first-use-failed/repo/repro_outputs/status.json">失败状态</a></li>
+        <li><a href="https://github.com/lllllllama/RigorPilot-Skills/blob/main/benchmark_outputs/showcases/micrograd-first-use-after/repo/repro_outputs/COMMANDS.md">修正后的命令与记录</a></li>
+        <li><a href="https://github.com/lllllllama/RigorPilot-Skills/blob/main/benchmark_outputs/showcases/micrograd-first-use-after/independent/RESULT.json">独立复核结果</a></li>
+      </ul>
+    </article>
+    <article>
+      <h2>谁可以用这套流程</h2>
+      <p>适合已经有公开代码仓库、需要核对 README 命令和运行结果的研究或工程团队。这个案例验证的是安装后的执行与记录流程，测试范围为 micrograd 的两项自动微分单元测试。</p>
+      <p><strong>12 个 Skills 在 skills.sh 累计约 460 万次安装</strong>，数据取自 2026 年 11 月 20 日快照。</p>
+      <ul class="links">
+        <li><a href="https://www.skills.sh/lllllllama/rigorpilot-skills">skills.sh 安装数据</a></li>
+        <li><a href="https://github.com/lllllllama/RigorPilot-Skills#examples">更多复现案例</a></li>
+      </ul>
+    </article>
+    <footer>
+      <p>工作机会和项目交流欢迎邮件联系 <a href="mailto:lama@ckrao.dev">lama@ckrao.dev</a>。</p>
+    </footer>
+  </main>
+</body>
+</html>
