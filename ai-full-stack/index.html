@@ -39,10 +39,21 @@
     <article>
       <h2>DeepTrender · 论文趋势平台</h2>
       <p><strong>独立开发。</strong> 我把四个论文来源的采集、去重、SQLite 存储和趋势分析串成数据链路，再通过 Flask REST API、MCP 服务和 Web 仪表盘提供查询。GitHub Actions 负责更新数据和发布网页。</p>
-      <p>在线演示可浏览论文和会议趋势。仓库的 2026 年 5 月快照包含 <strong>142,263 条结构化论文记录</strong>。</p>
+      <p>仓库的 2026 年 5 月快照包含 <strong>142,263 条结构化论文记录</strong>。</p>
+      <h3>在线按周查看 arXiv 论文趋势</h3>
+      <ol class="demo-steps">
+        <li><a href="https://lllllllama.github.io/DeepTrender/arxiv.html">打开 arXiv Trends</a>。</li>
+        <li>保留「所有分类」，把时间粒度切到周。</li>
+        <li>查看论文数量趋势和各时间段的热门关键词。</li>
+      </ol>
+      <h3>本地调用 Flask API</h3>
+      <p>在线仪表盘读取 GitHub Actions 导出的静态数据。按仓库文档安装依赖后，可在项目根目录启动 Flask，查询本地 SQLite 的论文总量、关键词数和会议数。</p>
+      <pre><code>python src/web/app.py
+# 在第二个终端执行
+curl http://localhost:5000/api/stats/overview</code></pre>
       <ul class="links">
-        <li><a href="https://lllllllama.github.io/DeepTrender/">打开在线演示</a></li>
         <li><a href="https://github.com/lllllllama/DeepTrender">查看源码与架构</a></li>
+        <li><a href="https://github.com/lllllllama/DeepTrender#local-development">本地启动与 MCP 接入</a></li>
       </ul>
     </article>
     <article>
@@ -51,6 +62,14 @@
       <ul class="links">
         <li><a href="https://github.com/lllllllama/GrillRadar">源码与报告示例</a></li>
         <li><a href="https://github.com/lllllllama/GrillRadar/blob/main/WEB_INTERFACE.md">Web 界面运行说明</a></li>
+      </ul>
+    </article>
+    <article>
+      <h2>RigorPilot-Skills · 科研 Agent 工程</h2>
+      <p>我独立开发的科研复现工具，按 README 组织实验、执行命令并记录日志和指标。<strong>12 个 Skills 在 skills.sh 累计约 460 万次安装</strong>，统计截至 2026 年 11 月 20 日。</p>
+      <ul class="links">
+        <li><a href="https://www.skills.sh/lllllllama/rigorpilot-skills">skills.sh 安装数据</a></li>
+        <li><a href="https://github.com/lllllllama/RigorPilot-Skills#examples">复现案例</a></li>
       </ul>
     </article>
     <footer>

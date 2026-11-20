@@ -29,3 +29,15 @@ article { margin-top: 1.2rem; padding: clamp(1rem, 3vw, 1.45rem); border: 1px so
 article p { color: var(--muted); }
 article p strong { color: var(--ink); }
 footer { margin-top: 1.55rem; }
+
+h3 { margin: 1.15rem 0 .4rem; font-size: 1.02rem; }
+.demo-steps { margin: .45rem 0 0; padding-inline-start: 1.4rem; }
+pre { margin: .65rem 0 0; padding: .7rem .85rem; overflow: auto; border-radius: .45rem; background: var(--background); }
+.metric-table { max-width: 100%; overflow: auto; margin-top: .85rem; }
+.metric-table:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+table { width: 100%; border-collapse: collapse; font-size: .93rem; font-variant-numeric: tabular-nums; }
+th, td { padding: .45rem .5rem; text-align: start; border-bottom: 1px solid var(--rule); }
+thead th { color: var(--muted); }
+@media (max-width: 430px) {
+  th, td { padding-inline: .3rem; }
+}
