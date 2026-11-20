@@ -62,6 +62,8 @@
     .links { display: flex; flex-wrap: wrap; column-gap: 1.15rem; row-gap: .4rem; padding: 0; list-style: none; }
     nav .links { margin: 1.2rem 0 0; }
     .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+    .career-cards { grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
+    .career-cards h3 { text-wrap: balance; }
     article { padding: 1.15rem; border: 1px solid var(--rule); border-radius: .75rem; background: var(--surface); scroll-margin-top: 1rem; }
     article p { color: var(--muted); }
     article .links { margin: .8rem 0 0; font-size: .94rem; }
@@ -150,6 +152,7 @@
       <p><a href="https://blog.csdn.net/2301_79168784"><strong>CSDN · 约 1.4 万粉丝</strong></a></p>
       <nav aria-label="页面导航">
         <ul class="links">
+          <li><a href="#career">求职方向</a></li>
           <li><a href="#current">近期项目</a></li>
           <li><a href="#projects">代表项目</a></li>
           <li><a href="#experience">实习经历</a></li>
@@ -166,10 +169,36 @@
         <p>在一组小规模离线仿真实验中，未来查询数从 1,568 减到 196，<strong>预测器计算量（FLOPs）约降 86%，训练循环耗时减少一半以上</strong>。</p>
       </article>
     </section>
+    <section id="career">
+      <h2>求职方向</h2>
+      <div class="cards career-cards">
+        <article>
+          <h3>具身智能算法研发</h3>
+          <p>关注机器人操作、世界-动作模型和仿真评测，能参与动作策略的模型实现、训练和离线验证。</p>
+          <ul class="links">
+            <li><a href="#current">Physical WAM</a></li>
+          </ul>
+        </article>
+        <article>
+          <h3>计算机视觉算法研发</h3>
+          <p>关注 RGB-D 感知、多模态融合、目标检测和语义分割，能用 PyTorch 完成模型实现、训练、消融实验和基准评测。</p>
+          <ul class="links">
+            <li><a href="#research">DDSkel</a></li>
+          </ul>
+        </article>
+        <article>
+          <h3>AI Agent 应用与基础设施研发</h3>
+          <p>关注 Agent Harness、工具调用、MCP 和 Skills 集成，能开发带执行日志和评测记录的智能体工作流。</p>
+          <ul class="links">
+            <li><a href="#rigorpilot">RigorPilot-Skills</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
     <section id="projects">
       <h2>代表项目</h2>
       <div class="cards">
-        <article>
+        <article id="rigorpilot">
           <h3>RigorPilot-Skills</h3>
           <p><strong><a href="https://www.skills.sh/lllllllama/rigorpilot-skills">skills.sh 累计约 460 万次安装</a></strong> · <time datetime="2026-11-20">2026 年 11 月 20 日</time></p>
           <p>我独立开发的深度学习复现工具。Agent 解析 README，Python 执行命令并记录日志和指标。Trusted / Explore 分开运行基线复现与探索，结果可通过标注版 README 和结构化记录回溯。</p>
@@ -224,7 +253,7 @@
           <div>
             <h3>同元软控</h3>
             <p><strong>具身智能应用研究实习生</strong></p>
-            <p>开发并测试具身智能仿真平台的 Agent 接口，参与开源模型迁移、复现和调优。</p>
+            <p>为具身智能仿真平台开发 Agent 接口，完成调用联调与测试。参与开源模型在目标环境中的迁移、复现和调优，并验证模型运行情况。</p>
           </div>
         </li>
         <li>
@@ -232,7 +261,7 @@
           <div>
             <h3>上海悦心健康集团</h3>
             <p><strong>AI 技术实习生</strong></p>
-            <p>负责 PICO 原型的设备接入、动作追踪和实机测试。<a href="#pico-eldercare">项目详情</a></p>
+            <p>在研发部主导 PICO 原型的实机交互和动作追踪，处理追踪抖动、短时丢失和坐标系变化。把头显第一视角接入 Codex Skill，用于定位交互问题和实机复测。<a href="#pico-eldercare">项目详情</a></p>
           </div>
         </li>
         <li>
@@ -240,7 +269,7 @@
           <div>
             <h3>上海交通大学</h3>
             <p><strong>科研助理（实习）</strong> · 主动健康战略与发展研究院</p>
-            <p>参与可穿戴设备与智能健康管理研究，协助组织实验和编写阶段性研究材料。</p>
+            <p>参与可穿戴设备与智能健康管理研究，协助讨论研究方案、组织实验和编写阶段性研究材料。</p>
           </div>
         </li>
       </ul>
